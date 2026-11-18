@@ -1,0 +1,71 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/bin/python3
+rootdir: /home/claude/bank-testing
+configfile: pytest.ini
+testpaths: tests
+plugins: platformdirs-4.13.5, anyio-4.15.1
+collecting ... collected 57 items
+
+tests/test_account.py::TestCreation::test_tc01_valid_account PASSED      [  1%]
+tests/test_account.py::TestCreation::test_tc02_bad_owner[] PASSED        [  3%]
+tests/test_account.py::TestCreation::test_tc02_bad_owner[   ] PASSED     [  5%]
+tests/test_account.py::TestCreation::test_tc02_bad_owner[None] PASSED    [  7%]
+tests/test_account.py::TestCreation::test_tc02_bad_owner[42] PASSED      [  8%]
+tests/test_account.py::TestCreation::test_tc03_bad_type PASSED           [ 10%]
+tests/test_account.py::TestCreation::test_tc04_negative_opening_balance PASSED [ 12%]
+tests/test_account.py::TestDepositBoundary::test_deposit_boundaries[0-False] PASSED [ 14%]
+tests/test_account.py::TestDepositBoundary::test_deposit_boundaries[1-True] PASSED [ 15%]
+tests/test_account.py::TestDepositBoundary::test_deposit_boundaries[2-True] PASSED [ 17%]
+tests/test_account.py::TestDepositBoundary::test_deposit_boundaries[50000-True] PASSED [ 19%]
+tests/test_account.py::TestDepositBoundary::test_deposit_boundaries[99999-True] PASSED [ 21%]
+tests/test_account.py::TestDepositBoundary::test_deposit_boundaries[100000-True] PASSED [ 22%]
+tests/test_account.py::TestDepositBoundary::test_deposit_boundaries[100001-False] PASSED [ 24%]
+tests/test_account.py::TestDepositBoundary::test_tc12_non_positive[-5] PASSED [ 26%]
+tests/test_account.py::TestDepositBoundary::test_tc12_non_positive[-0.01] PASSED [ 28%]
+tests/test_account.py::TestDepositBoundary::test_tc12_non_positive[0.0] PASSED [ 29%]
+tests/test_account.py::TestDepositBoundary::test_tc13_type_errors[abc] PASSED [ 31%]
+tests/test_account.py::TestDepositBoundary::test_tc13_type_errors[None] PASSED [ 33%]
+tests/test_account.py::TestDepositBoundary::test_tc13_type_errors[amount2] PASSED [ 35%]
+tests/test_account.py::TestDepositBoundary::test_tc13_type_errors[True] PASSED [ 36%]
+tests/test_account.py::TestDepositBoundary::test_tc13_type_errors[amount4] PASSED [ 38%]
+tests/test_account.py::TestDepositBoundary::test_tc14_nan_inf[nan] PASSED [ 40%]
+tests/test_account.py::TestDepositBoundary::test_tc14_nan_inf[inf] PASSED [ 42%]
+tests/test_account.py::TestDepositBoundary::test_tc15_string_numeric_and_rounding PASSED [ 43%]
+tests/test_account.py::TestDepositBoundary::test_tc16_frozen_cannot_deposit PASSED [ 45%]
+tests/test_account.py::TestWithdraw::test_tc17_normal PASSED             [ 47%]
+tests/test_account.py::TestWithdraw::test_tc18_non_positive[0] PASSED    [ 49%]
+tests/test_account.py::TestWithdraw::test_tc18_non_positive[-1] PASSED   [ 50%]
+tests/test_account.py::TestWithdraw::test_savings_min_balance_boundary[9499-True] PASSED [ 52%]
+tests/test_account.py::TestWithdraw::test_savings_min_balance_boundary[9500-True] PASSED [ 54%]
+tests/test_account.py::TestWithdraw::test_savings_min_balance_boundary[9501-False] PASSED [ 56%]
+tests/test_account.py::TestWithdraw::test_current_overdraft_boundary[5999-True] PASSED [ 57%]
+tests/test_account.py::TestWithdraw::test_current_overdraft_boundary[6000-True] PASSED [ 59%]
+tests/test_account.py::TestWithdraw::test_current_overdraft_boundary[6001-False] PASSED [ 61%]
+tests/test_account.py::TestWithdraw::test_tc25_daily_limit_boundary PASSED [ 63%]
+tests/test_account.py::TestWithdraw::test_tc26_single_withdraw_over_limit PASSED [ 64%]
+tests/test_account.py::TestWithdraw::test_tc27_reset_day PASSED          [ 66%]
+tests/test_account.py::TestWithdraw::test_tc28_frozen_cannot_withdraw PASSED [ 68%]
+tests/test_account.py::TestWithdraw::test_tc29_failed_withdraw_leaves_state PASSED [ 70%]
+tests/test_account.py::TestTransfer::test_tc30_success PASSED            [ 71%]
+tests/test_account.py::TestTransfer::test_tc31_self_transfer PASSED      [ 73%]
+tests/test_account.py::TestTransfer::test_tc32_insufficient_funds_no_credit PASSED [ 75%]
+tests/test_account.py::TestTransfer::test_tc33_rollback_when_target_frozen PASSED [ 77%]
+tests/test_account.py::TestTransfer::test_tc34_rollback_with_mock_target PASSED [ 78%]
+tests/test_account.py::TestTransfer::test_tc35_frozen_sender PASSED      [ 80%]
+tests/test_account.py::TestTransfer::test_tc36_transfer_bad_amount PASSED [ 82%]
+tests/test_account.py::TestInterest::test_tiers[500-1.25] PASSED         [ 84%]
+tests/test_account.py::TestInterest::test_tiers[9999.99-25.00] PASSED    [ 85%]
+tests/test_account.py::TestInterest::test_tiers[10000-33.33] PASSED      [ 87%]
+tests/test_account.py::TestInterest::test_tiers[99999.99-333.33] PASSED  [ 89%]
+tests/test_account.py::TestInterest::test_tiers[100000-416.67] PASSED    [ 91%]
+tests/test_account.py::TestInterest::test_tiers[240000-1000.00] PASSED   [ 92%]
+tests/test_account.py::TestInterest::test_tc41_balance_updated PASSED    [ 94%]
+tests/test_account.py::TestInterest::test_tc42_current_not_eligible PASSED [ 96%]
+tests/test_account.py::TestInterest::test_tc43_frozen_no_interest PASSED [ 98%]
+tests/test_account.py::TestInterest::test_tc44_rate_helper PASSED        [100%]
+
+------- generated xml file: /home/claude/bank-testing/reports/junit.xml --------
+============================= slowest 5 durations ==============================
+
+(5 durations < 0.005s hidden.  Use -vv to show these durations.)
+============================== 57 passed in 0.08s ==============================

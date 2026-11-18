@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M1",
+    "defect": "Deposit max boundary off-by-one",
+    "killed": true,
+    "caught_by": ""
+  },
+  {
+    "id": "M2",
+    "defect": "Deposit min boundary off-by-one",
+    "killed": true,
+    "caught_by": ""
+  },
+  {
+    "id": "M3",
+    "defect": "Daily limit uses >= instead of >",
+    "killed": true,
+    "caught_by": ""
+  },
+  {
+    "id": "M4",
+    "defect": "Min savings balance check off-by-one",
+    "killed": true,
+    "caught_by": ""
+  },
+  {
+    "id": "M5",
+    "defect": "Overdraft limit check off-by-one",
+    "killed": true,
+    "caught_by": ""
+  },
+  {
+    "id": "M6",
+    "defect": "Transfer rollback removed",
+    "killed": true,
+    "caught_by": ""
+  },
+  {
+    "id": "M7",
+    "defect": "Tier-1 ceiling boundary wrong",
+    "killed": true,
+    "caught_by": ""
+  },
+  {
+    "id": "M8",
+    "defect": "Interest divided by 10 not 12",
+    "killed": true,
+    "caught_by": ""
+  },
+  {
+    "id": "M9",
+    "defect": "Frozen check skipped on deposit",
+    "killed": true,
+    "caught_by": ""
+  },
+  {
+    "id": "M10",
+    "defect": "Self-transfer guard removed",
+    "killed": true,
+    "caught_by": ""
+  }
+]

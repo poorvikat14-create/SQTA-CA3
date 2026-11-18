@@ -1,0 +1,8 @@
+{
+  "file": "bank/account.py",
+  "executable_lines": 100,
+  "covered_lines": 100,
+  "missed_lines": [],
+  "line_coverage_pct": 100.0,
+  "pytest_exit_code": 0
+}
